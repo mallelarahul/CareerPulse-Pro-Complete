@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CareerPulse Pro - 550+ Elite IT Opportunities Across USA</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <div class="logo-icon">⚡</div>
+                CareerPulse Pro
+            </div>
+            <div class="nav-buttons">
+                <!-- Login/Signup (shown when not logged in) -->
+                <div id="authButtons" style="display: flex; gap: 10px; align-items: center;">
+                    <button class="btn btn-secondary" id="headerLoginBtn">Login</button>
+                    <button class="btn btn-primary" id="headerSignupBtn">Sign Up</button>
+                </div>
+                
+                <!-- User info (shown when logged in) -->
+                <div id="userSection" style="display: none; gap: 15px; align-items: center;">
+                    <span id="headerUserName" style="color: var(--text-primary); font-weight: 600;">Welcome, Rahul</span>
+                    <button class="btn btn-secondary" id="logoutBtn">Logout</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <!-- HERO SECTION -->
+        <section class="section active" id="heroSection">
+            <div class="hero">
+                <div class="hero-content">
+                    <h1>Discover <span class="hero-accent">550+ Elite IT Careers Across USA</span></h1>
+                    <p>AI-powered resume matching with 100+ technologies including AI/ML, Blockchain, Cloud, Data, Security & More. Find, enhance, and apply to opportunities nationwide.</p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary btn-lg" id="heroSignupBtn">Start Your Journey</button>
+                        <button class="btn btn-secondary btn-lg" id="heroLoginBtn">Already Registered?</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DASHBOARD SECTION -->
+        <section class="section" id="dashboardSection">
+            <div class="container">
+                <div class="profile-header">
+                    <div class="profile-info">
+                        <h2>Welcome, <span id="userDisplayName">User</span>! 👋</h2>
+                        <p>Explore <strong id="totalJobsCount">550+</strong> opportunities with 100+ technologies</p>
+                    </div>
+                    <button class="btn btn-secondary" id="logoutBtn">Logout</button>
+                </div>
+
+                <!-- STATS -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number" id="totalJobs">550+</div>
+                        <div class="stat-label">Total Positions</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="matchedJobs">0</div>
+                        <div class="stat-label">Matching Jobs</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="appliedJobs">0</div>
+                        <div class="stat-label">Applications</div>
+                    </div>
+                </div>
+
+                <!-- SEARCH & FILTERS -->
+                <div class="search-filters">
+                    <div class="search-bar" style="grid-column: 1/-1;">
+                        <input type="text" id="searchInput" placeholder="Search by title, company, or technology (React, Python, AI/ML, Kubernetes, etc)...">
+                    </div>
+                    <select id="stateFilter">
+                        <option value="">All States</option>
+                    </select>
+                    <select id="techFilter">
+                        <option value="">All Technologies</option>
+                    </select>
+                    <select id="sortFilter" style="grid-column: 1/-1;">
+                        <option value="newest">🔥 Newest First (Posted Recently)</option>
+                        <option value="oldest">📅 Oldest First (Posted Earlier)</option>
+                        <option value="match">⭐ Highest Match Score</option>
+                        <option value="salary">💰 Highest Salary</option>
+                    </select>
+                </div>
+
+                <!-- JOBS GRID -->
+                <div class="jobs-grid" id="jobsGrid">
+                    <div class="empty-state">
+                        <div class="empty-state-icon">🔍</div>
+                        <p>Loading opportunities...</p>
+                    </div>
+                </div>
+
+                <!-- PAGINATION -->
+                <div class="pagination" id="pagination"></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 CareerPulse Pro. 550+ Positions with 100+ Technologies | AI/ML • Blockchain • Cloud • Data • Security<br>Developed by RAHUL MALLELA</p>
+        </div>
+    </footer>
+
+    <!-- LOGIN MODAL -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('loginModal')">×</button>
+            <h3 class="modal-title">Welcome Back</h3>
+            <p class="modal-subtitle">Login to access your opportunities</p>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" id="loginEmail" placeholder="your@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <div class="password-input-group">
+                        <input type="password" id="loginPassword" placeholder="••••••••" required>
+                        <button type="button" class="password-toggle" onclick="togglePasswordVisibility('loginPassword')">👁️</button>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 20px;">Login</button>
+            </form>
+            <p style="text-align: center; margin-top: 15px; font-size: 13px;">
+                <button type="button" class="btn btn-link" style="background: none; border: none; color: var(--primary); cursor: pointer; text-decoration: underline;" onclick="closeModal('loginModal'); openModal('forgotPasswordModal')">Forgot Password?</button>
+            </p>
+        </div>
+    </div>
+
+    <!-- SIGNUP MODAL -->
+    <div class="modal" id="signupModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('signupModal')">×</button>
+            <h3 class="modal-title">Join CareerPulse</h3>
+            <p class="modal-subtitle">Create your account and start exploring</p>
+            <form id="signupForm">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" id="signupName" placeholder="John Doe" required>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" id="signupEmail" placeholder="your@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <div class="password-input-group">
+                        <input type="password" id="signupPassword" placeholder="••••••••" required>
+                        <button type="button" class="password-toggle" onclick="togglePasswordVisibility('signupPassword')">👁️</button>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Confirm Password</label>
+                    <div class="password-input-group">
+                        <input type="password" id="signupConfirm" placeholder="••••••••" required>
+                        <button type="button" class="password-toggle" onclick="togglePasswordVisibility('signupConfirm')">👁️</button>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 20px;">Create Account</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- FORGOT PASSWORD MODAL -->
+    <div class="modal" id="forgotPasswordModal">
+        <div class="modal-content" style="max-width: 500px;">
+            <button class="modal-close" onclick="closeModal('forgotPasswordModal')">×</button>
+            <h3 class="modal-title">Reset Your Password</h3>
+            <p class="modal-subtitle">Enter your email to reset your password</p>
+            
+            <!-- Step 1: Enter Email -->
+            <div id="forgotStep1" style="display: block;">
+                <form id="forgotPasswordForm">
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" id="forgotEmail" placeholder="your@email.com" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 20px;">Send Reset Link</button>
+                </form>
+                <p style="text-align: center; margin-top: 15px; font-size: 13px;">
+                    <button type="button" class="btn btn-link" style="background: none; border: none; color: var(--primary); cursor: pointer; text-decoration: underline;" onclick="closeModal('forgotPasswordModal'); openModal('loginModal')">Back to Login</button>
+                </p>
+            </div>
+
+            <!-- Step 2: Enter New Password (Simplified) -->
+            <div id="forgotStep2" style="display: none;">
+                <form id="resetPasswordForm">
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" id="resetEmail" placeholder="your@email.com" disabled style="background: rgba(255,255,255,0.05);">
+                    </div>
+                    <div class="form-group">
+                        <label>New Password</label>
+                        <div class="password-input-group">
+                            <input type="password" id="newPassword" placeholder="••••••••" required>
+                            <button type="button" class="password-toggle" onclick="togglePasswordVisibility('newPassword')">👁️</button>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Confirm Password</label>
+                        <div class="password-input-group">
+                            <input type="password" id="confirmNewPassword" placeholder="••••••••" required>
+                            <button type="button" class="password-toggle" onclick="togglePasswordVisibility('confirmNewPassword')">👁️</button>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 20px;">Update Password</button>
+                </form>
+            </div>
+
+            <!-- Step 3: Success -->
+            <div id="forgotStep3" style="display: none; text-align: center;">
+                <div style="font-size: 60px; margin: 20px 0;">✅</div>
+                <h3 style="color: var(--success);">Password Updated!</h3>
+                <p style="margin: 15px 0; color: var(--text-secondary);">Your password has been changed successfully. You can now login with your new password.</p>
+                <button type="button" class="btn btn-primary" style="width: 100%; margin-top: 20px;" onclick="closeModal('forgotPasswordModal'); openModal('loginModal')">Back to Login</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- UPLOAD RESUME MODAL (STEP 1) -->
+    <div class="modal" id="uploadResumeModal">
+        <div class="modal-content" style="max-width: 600px;">
+            <button class="modal-close" onclick="closeModal('uploadResumeModal')">×</button>
+            
+            <div class="step-indicator">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-label">Upload</div>
+                </div>
+                <div class="step inactive">
+                    <div class="step-number">2</div>
+                    <div class="step-label">Enhance</div>
+                </div>
+                <div class="step inactive">
+                    <div class="step-number">3</div>
+                    <div class="step-label">Apply</div>
+                </div>
+            </div>
+
+            <h3 class="modal-title">📄 Upload Your Resume</h3>
+            <p class="modal-subtitle">Upload your resume file to get started</p>
+            
+            <form id="uploadResumeForm">
+                <div class="form-group">
+                    <label style="margin-bottom: 12px;">Select Resume File:</label>
+                    
+                    <!-- Upload Area -->
+                    <div class="file-upload" id="uploadArea" onclick="document.getElementById('resumeFile').click()" style="cursor: pointer; display: block;">
+                        <input type="file" id="resumeFile" accept=".pdf,.txt,.doc,.docx" style="display: none;">
+                        <div class="file-upload-label">
+                            <span>
+                                <div style="font-size: 24px; margin-bottom: 8px;">📎</div>
+                                Click to upload or drag and drop
+                                <div style="font-size: 12px; color: var(--text-secondary); margin-top: 8px;">PDF, Word (.docx), or TXT files</div>
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <!-- File Uploaded Display -->
+                    <div class="file-name" id="fileName" style="margin-top: 15px; padding: 15px; background: rgba(6, 214, 160, 0.1); border: 1px solid rgba(6, 214, 160, 0.3); border-radius: 8px; display: none;">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <div>
+                                <p style="color: var(--success); font-size: 14px; margin: 0;"><strong>✓ File Uploaded:</strong> <span id="fileNameDisplay"></span></p>
+                                <p style="color: var(--text-secondary); font-size: 12px; margin: 5px 0 0 0;">Ready to enhance</p>
+                            </div>
+                            <button type="button" class="btn btn-secondary" style="padding: 6px 12px; font-size: 12px;" onclick="removeUploadedResume()">Change</button>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 20px;">Continue to Enhancement</button>
+                <button type="button" class="btn btn-secondary" style="width: 100%; margin-top: 10px;" onclick="applyWithExistingResume()">📝 Apply with Your Resume</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- ENHANCE RESUME MODAL (STEP 2) -->
+    <div class="modal" id="enhanceResumeModal">
+        <div class="modal-content" style="max-width: 700px; max-height: 90vh; overflow-y: auto;">
+            <button class="modal-close" onclick="closeModal('enhanceResumeModal')">×</button>
+            
+            <div class="step-indicator">
+                <div class="step">
+                    <div class="step-number">✓</div>
+                    <div class="step-label">Upload</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-label">Enhance</div>
+                </div>
+                <div class="step inactive">
+                    <div class="step-number">3</div>
+                    <div class="step-label">Apply</div>
+                </div>
+            </div>
+
+            <h3 class="modal-title">🚀 AI Resume Enhancement</h3>
+            <p class="modal-subtitle">Your resume will be optimized for this position</p>
+
+            <!-- Your Resume File Display -->
+            <div class="form-group">
+                <label>Your Current Resume</label>
+                <div style="background: rgba(100, 150, 255, 0.1); border: 2px solid rgba(100, 150, 255, 0.3); border-radius: 8px; padding: 20px; text-align: center; margin-bottom: 15px;">
+                    <div style="font-size: 48px; margin-bottom: 10px;" id="resumeFileIcon">📄</div>
+                    <p style="color: var(--text-primary); font-weight: 600; margin: 0 0 5px 0;" id="resumeFileName">resume.pdf</p>
+                    <p style="color: var(--text-secondary); font-size: 12px; margin: 0;">File ready for enhancement</p>
+                </div>
+            </div>
+
+            <!-- Job Description -->
+            <div class="form-group">
+                <label>Job Description (Target Position)</label>
+                <div class="resume-preview" id="targetJobDescription"></div>
+            </div>
+
+            <p style="color: var(--text-secondary); font-size: 12px; margin-bottom: 20px; text-align: center;">
+                ✨ Our AI will analyze the job requirements and enhance your resume with matching keywords and relevant achievements
+            </p>
+
+            <button type="button" class="btn btn-primary" style="width: 100%; margin-bottom: 10px;" onclick="enhanceResumeWithAI()">
+                <span id="enhanceButtonText">Enhance with AI</span>
+            </button>
+            <button type="button" class="btn btn-secondary" style="width: 100%;" onclick="closeModal('enhanceResumeModal')">Back</button>
+        </div>
+    </div>
+
+    <!-- ENHANCED RESUME VIEW MODAL (STEP 3) -->
+    <div class="modal" id="enhancedResumeViewModal">
+        <div class="modal-content" style="max-width: 800px; max-height: 95vh; overflow-y: auto;">
+            <button class="modal-close" onclick="closeModal('enhancedResumeViewModal')">×</button>
+
+            <div class="step-indicator">
+                <div class="step">
+                    <div class="step-number">✓</div>
+                    <div class="step-label">Upload</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">✓</div>
+                    <div class="step-label">Enhance</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-label">Apply</div>
+                </div>
+            </div>
+
+            <h3 class="modal-title">✨ Enhanced Resume Ready</h3>
+            <p class="modal-subtitle">Optimized for the position - Ready to apply</p>
+            
+            <div class="form-group">
+                <label>AI-Enhanced Resume</label>
+                <div class="resume-preview" id="enhancedResumeContent"></div>
+            </div>
+
+            <div style="background: rgba(6, 214, 160, 0.1); border: 1px solid rgba(6, 214, 160, 0.3); padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+                <p style="color: var(--success); font-size: 13px;">✓ Resume enhanced with job-matched keywords and optimized content</p>
+            </div>
+
+            <div class="form-group">
+                <label>Download Format:</label>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 15px;">
+                    <button type="button" class="btn btn-secondary" style="width: 100%;" id="downloadPdfBtn" onclick="downloadEnhancedResume('pdf')">📄 PDF Format</button>
+                    <button type="button" class="btn btn-secondary" style="width: 100%;" id="downloadDocxBtn" onclick="downloadEnhancedResume('docx')">📘 Word Format</button>
+                </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px;">
+                <button type="button" class="btn btn-primary" style="width: 100%;" onclick="applyWithEnhancedResume()">✅ Apply (Enhanced)</button>
+                <button type="button" class="btn btn-secondary" style="width: 100%;" onclick="applyWithOriginalResume()">📝 Apply (Original)</button>
+            </div>
+            <button type="button" class="btn btn-secondary" style="width: 100%;" onclick="goBackToJobSearch()">Back to Jobs</button>
+        </div>
+    </div>
+
+    <!-- APPLICATION CONFIRMATION MODAL -->
+    <div class="modal" id="confirmationModal">
+        <div class="modal-content" style="text-align: center;">
+            <button class="modal-close" onclick="closeModal('confirmationModal')">×</button>
+            <div style="font-size: 60px; margin: 20px 0;">✅</div>
+            <h3 class="modal-title">Application Submitted!</h3>
+            <p class="modal-subtitle" id="confirmationMessage" style="margin-bottom: 30px;">Your resume has been sent successfully.<br>The employer will review it shortly.</p>
+            <button class="btn btn-primary" style="width: 100%; margin-top: 20px;" onclick="closeModal('confirmationModal'); showSection('dashboardSection')">Continue Exploring</button>
+        </div>
+    </div>
+
+    <!-- EMAIL CONFIRMATION MODAL -->
+    <div class="modal" id="emailConfirmationModal">
+        <div class="modal-content" style="text-align: center; max-width: 600px;">
+            <button class="modal-close" onclick="closeModal('emailConfirmationModal')">×</button>
+            <div style="font-size: 60px; margin: 20px 0;">📧</div>
+            <h3 class="modal-title">Confirmation Email Sent!</h3>
+            <div style="background: rgba(0, 212, 255, 0.1); padding: 20px; border-radius: 8px; margin: 20px 0; text-align: left;">
+                <p style="margin: 10px 0;"><strong>Position:</strong> <span id="emailJobTitle"></span></p>
+                <p style="margin: 10px 0;"><strong>Company:</strong> <span id="emailCompany"></span></p>
+                <p style="margin: 10px 0;"><strong>Sent to:</strong> <span id="emailAddress" style="color: var(--primary);"></span></p>
+            </div>
+            <p style="color: var(--text-secondary); font-size: 13px; margin: 15px 0;">
+                ✓ Check your email (including spam folder) for the confirmation<br>
+                ✓ Keep your resume updated in CareerPulse Pro<br>
+                ✓ The employer will contact you soon
+            </p>
+            <button class="btn btn-primary" style="width: 100%; margin-top: 20px;" onclick="closeModal('emailConfirmationModal'); showSection('dashboardSection')">Back to Jobs</button>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/docx/8.5.0/docx.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

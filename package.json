@@ -1,0 +1,28 @@
+{
+  "name": "careerpulse-pro",
+  "version": "1.0.0",
+  "description": "CareerPulse Pro - 550+ IT Job Portal with AI Resume Enhancement",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "dev": "python -m http.server 8000",
+    "build": "echo 'No build needed for static site'",
+    "deploy": "echo 'Ready for deployment'"
+  },
+  "keywords": [
+    "job-portal",
+    "career",
+    "ai-resume",
+    "it-jobs",
+    "remote-jobs"
+  ],
+  "author": "CareerPulse Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/careerpulse-pro"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

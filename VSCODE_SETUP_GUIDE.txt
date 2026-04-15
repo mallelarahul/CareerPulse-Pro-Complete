@@ -1,0 +1,262 @@
+╔════════════════════════════════════════════════════════════════════════════╗
+║                                                                            ║
+║         🔧 VS CODE SETUP & FIXES - CAREERPULSE PRO 🔧                    ║
+║                                                                            ║
+║              Complete Guide to Fix All Issues in VS Code                  ║
+║                                                                            ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+✅ STEP 1: EXTRACT UPDATED ZIP
+
+1. Download: CareerPulse-Pro-Complete.zip
+2. Right-click → Extract All
+3. Choose location
+4. Open extracted folder in VS Code:
+   - File → Open Folder
+   - Select: CareerPulse-Pro-Complete
+   - Click Open
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ STEP 2: INSTALL LIVE SERVER EXTENSION
+
+This is the easiest way to run the app locally!
+
+1. In VS Code, click Extensions icon (Ctrl+Shift+X)
+2. Search: "Live Server"
+3. Find: "Live Server" by Ritwick Dey
+4. Click "Install"
+5. Click "Enable"
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ STEP 3: RUN ON LOCALHOST
+
+1. In left sidebar, find "index.html"
+2. Right-click on it
+3. Select "Open with Live Server"
+4. Browser opens automatically
+5. You're running at: http://localhost:5500
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ STEP 4: VERIFY FOOTER IS UPDATED
+
+1. Look at bottom of webpage
+2. You should see:
+   © 2026 CareerPulse Pro...
+   Developed by RAHUL MALLELA
+
+If you don't see it:
+→ Delete old folder
+→ Extract new ZIP file
+→ Use that folder instead
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ STEP 5: TEST ALL FEATURES
+
+Sign Up:
+→ Click "Sign Up"
+→ Enter: Name, Email, Password
+→ Click "Create Account"
+
+Browse Jobs:
+→ See 550+ jobs
+→ Each shows: Title, Company, Location, Tech, Match %
+
+Search:
+→ Type "React" in search
+→ See only React jobs
+
+Filter:
+→ Select "CA" from State
+→ Select "Python" from Tech
+→ See filtered results
+
+Sort:
+→ Change sort to "💰 Highest Salary"
+→ Jobs re-sort
+
+Resume Enhancement:
+→ Click any job "✨ Enhance & Apply"
+→ Paste resume text
+→ Click "Continue"
+→ Click "Enhance with AI"
+→ See enhanced resume
+→ Click "Apply"
+
+Everything working? GREAT! ✅
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ STEP 6: PUSH TO GITHUB
+
+Open Terminal in VS Code (Ctrl + `)
+
+1. Initialize Git:
+   git init
+
+2. Add all files:
+   git add .
+
+3. Commit:
+   git commit -m "Initial commit - CareerPulse Pro"
+
+4. Go to https://github.com/new
+5. Create repository: "careerpulse-pro"
+6. Copy the URL (looks like: https://github.com/YOUR_USERNAME/careerpulse-pro.git)
+
+7. In Terminal, paste:
+   git remote add origin [PASTE_YOUR_URL_HERE]
+
+8. Push to GitHub:
+   git branch -M main
+   git push -u origin main
+
+9. First push might take 30 seconds
+10. Code is now on GitHub! ✅
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ STEP 7: DEPLOY TO NETLIFY
+
+1. Go to https://app.netlify.com
+2. Click "New site from Git"
+3. Click "GitHub" button
+4. Authorize Netlify with GitHub
+5. Search: "careerpulse-pro"
+6. Click on your repository
+7. Click "Deploy site"
+8. WAIT 1-2 MINUTES for deployment
+9. Your site is LIVE! 🎉
+
+Your URL will be: https://random-name-12345.netlify.app
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+❓ TROUBLESHOOTING
+
+Issue: "Live Server button not showing"
+→ Right-click index.html
+→ Scroll down, you'll see "Open with Live Server"
+
+Issue: "Port 5500 already in use"
+→ Open settings (Ctrl+,)
+→ Search: "Live Server Port"
+→ Change to: 5501 or 8000
+
+Issue: "Can't push to GitHub"
+Error: "fatal: not a git repository"
+→ Make sure you're in correct folder
+→ Run: pwd (shows current folder)
+→ cd to correct folder if needed
+
+Error: "Authentication failed"
+→ Go to https://github.com/settings/tokens
+→ Create new token
+→ Use that instead of password
+
+Issue: "Jobs not showing"
+→ Press F12 (Developer Tools)
+→ Click "Console" tab
+→ Look for red errors
+→ Refresh page (F5)
+
+Issue: "Resume enhancement not working"
+→ You need Claude API key
+→ But it has fallback - still works!
+→ See mock enhancement
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📋 QUICK CHECKLIST
+
+Before pushing to GitHub:
+
+□ Extracted updated ZIP
+□ Opened in VS Code
+□ Installed Live Server
+□ Opened with Live Server
+□ Verified footer shows:
+  ✓ 2026
+  ✓ RAHUL MALLELA
+□ Signed up (tested auth)
+□ Browsed jobs (550+ show)
+□ Tested search (typed "React")
+□ Tested filter (selected "CA")
+□ Tested sort (changed to salary)
+□ Tested resume enhancement
+□ All features working ✅
+□ Opened Terminal in VS Code
+□ Ran: git init
+□ Ran: git add .
+□ Ran: git commit -m "Initial commit"
+□ Created GitHub repo
+□ Ran: git remote add origin [URL]
+□ Ran: git branch -M main
+□ Ran: git push -u origin main
+□ Code on GitHub ✅
+□ Went to netlify.com
+□ Connected GitHub
+□ Selected repo
+□ Clicked Deploy
+□ Site is LIVE! 🎉
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎯 COMMANDS REFERENCE
+
+# Terminal Commands (Ctrl + `)
+
+# Git commands
+git init                    # Initialize git
+git add .                   # Add all files
+git commit -m "message"     # Commit files
+git remote add origin URL   # Connect to GitHub
+git branch -M main          # Create main branch
+git push -u origin main     # Push to GitHub
+
+# Server commands
+python -m http.server 8000  # Python server
+npm start                   # Node.js server
+
+# Other
+clear                       # Clear terminal
+pwd                        # Show current folder
+cd folder-name             # Go to folder
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔗 IMPORTANT LINKS
+
+VS Code: https://code.visualstudio.com
+Git: https://git-scm.com
+GitHub: https://github.com
+Netlify: https://app.netlify.com
+Live Server Extension: 
+  → VS Code → Extensions → Search "Live Server"
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ YOU'RE READY!
+
+Steps to success:
+1. Extract ZIP ✓
+2. Install Live Server ✓
+3. Open with Live Server ✓
+4. Test locally ✓
+5. Push to GitHub ✓
+6. Deploy to Netlify ✓
+7. Share with world ✓
+
+Total time: ~30-45 minutes
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Made with ❤️ for RAHUL MALLELA
+
+Your CareerPulse Pro is ready to launch!
+Questions? Check this guide or the docs inside the ZIP.
+
+Let's go! 🚀

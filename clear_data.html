@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Clear CareerPulse Pro Data</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #050812;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            background: #1a1a2e;
+            padding: 40px;
+            border-radius: 8px;
+            color: #fff;
+        }
+        button {
+            background: #00d4ff;
+            color: #050812;
+            border: none;
+            padding: 12px 30px;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        button:hover {
+            background: #00a8cc;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔄 Clear CareerPulse Pro Data</h1>
+        <p>Click below to clear all saved data and start fresh</p>
+        <button onclick="clearData()">Clear All Data</button>
+        <button onclick="goBack()">Cancel</button>
+        <p id="status"></p>
+    </div>
+    <script>
+        function clearData() {
+            localStorage.clear();
+            document.getElementById('status').innerHTML = '<p style="color: #00d4ff; margin-top: 20px;">✅ Data cleared! All localStorage has been removed.<br>You can now close this tab and refresh the app.</p>';
+        }
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>
