@@ -616,11 +616,7 @@ function renderJobs(jobsToRender = app.jobs) {
                     </div>
                 </div>
 
-                <div style="padding: 12px 0; border-top: 1px solid rgba(100, 150, 255, 0.1);">
-                    <a href="${directJobUrl}" target="_blank" rel="noopener noreferrer" style="font-size: 12px; color: var(--primary); text-decoration: none; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;">
-                        🔗 View on ${job.company} Portal →
-                    </a>
-                </div>
+               
 
                 <div class="job-footer">
                     <button class="btn btn-enhance btn-sm" onclick="openEnhanceWorkflow(${actualIndex})">✨ Enhance & Apply</button>
@@ -636,6 +632,11 @@ function renderJobs(jobsToRender = app.jobs) {
     renderPagination(jobsToRender.length);
 }
 
+//  <div style="padding: 12px 0; border-top: 1px solid rgba(100, 150, 255, 0.1);">
+//                     <a href="${directJobUrl}" target="_blank" rel="noopener noreferrer" style="font-size: 12px; color: var(--primary); text-decoration: none; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;">
+//                          View on ${job.company} Portal →
+//                     </a>
+//                 </div>
 
 // Get REAL company job IDs and direct job posting URLs
 function getCompanyJobPosting(company, position, jobIndex) {
